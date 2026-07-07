@@ -1,0 +1,40 @@
+name: Autonomous DevSecOps QA Pipeline
+
+# Trigger this workflow whenever a developer opens or updates a Pull Request to the main branch
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ai-orchestrator-execution:
+    name: Run AI QA Agents
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install Project Dependencies
+        run: npm ci
+
+      - name: 🌐 Install Playwright Browsers (Headless)
+        run: npx playwright install --with-deps chromium
+
+      - name: 🤖 Execute LangGraph Orchestrator
+        # This maps your GitHub Secrets to the .env variables the script expects
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
+        # We run this headlessly in the cloud, so the AI executes silently
+        run: npm run start:ai

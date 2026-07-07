@@ -1,0 +1,22 @@
+{
+  "name": "ai-qa-orchestrator",
+  "version": "1.0.0",
+  "description": "Multi-Agent AI QA Pipeline using LangGraph and Playwright",
+  "main": "index.ts",
+  "scripts": {
+    "start:ai": "tsx --env-file=.env index.ts",
+    "clean": "rm -f *.spec.js",
+    "test:ui": "npx playwright test --headed"
+  },
+  "dependencies": {
+    "@langchain/google-genai": "^0.0.20",
+    "@langchain/langgraph": "^0.0.25",
+    "playwright": "^1.45.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0"
+  }
+}
