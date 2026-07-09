@@ -1,0 +1,7 @@
+[
+    {
+        "module": "OrangeHRM - Leave Management",
+        "targetUrl": "https://opensource-demo.orangehrmlive.com/",
+        "story": "As an Admin, I want to log into the OrangeHRM demo site (username: Admin, password: admin123)..."
+    }
+]

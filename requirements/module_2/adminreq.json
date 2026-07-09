@@ -1,0 +1,43 @@
+[
+    {
+        "id": "TC-OHRM-ADM-001",
+        "module": "OrangeHRM - Admin - Standard Login",
+        "targetUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "story": "As an Admin, I want to log in using valid credentials (username: Admin, password: admin123) and verify that I am successfully redirected to the Dashboard page.",
+        "aiDirectives": {
+            "mainPointsToConsider": [
+                "Always use Playwright's built-in auto-waiting, do not use hardcoded page.waitForTimeout()."
+            ],
+            "criticalScenarios": [
+                "Verify the '/dashboard' URL is reached after valid login."
+            ]
+        },
+        "executionFlags": {
+            "runUI": true,
+            "runVAPT": true,
+            "runPerformance": true,
+            "createJiraTicket": true
+        }
+    },
+    {
+        "id": "TC-OHRM-ADM-002",
+        "module": "OrangeHRM - Admin - Secure Login",
+        "targetUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "story": "As a System Admin, I want to log into the application and verify that the authentication process handles invalid inputs securely and validates valid inputs efficiently.",
+        "aiDirectives": {
+            "mainPointsToConsider": [
+                "Use the credentials: username 'Admin', password 'admin123'."
+            ],
+            "criticalScenarios": [
+                "Attempt login with SQL injection payload (' OR 1=1 --) in username.",
+                "Verify the password input field is properly masked (type='password')."
+            ]
+        },
+        "executionFlags": {
+            "runUI": true,
+            "runVAPT": true,
+            "runPerformance": true,
+            "createJiraTicket": true
+        }
+    }
+]
