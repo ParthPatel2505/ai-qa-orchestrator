@@ -1,0 +1,14 @@
+[
+    {
+        "id": "TC-OHRM-LEV-001",
+        "module": "OrangeHRM - Leave - Navigation",
+        "targetUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "story": "As an employee, after logging in (username: Admin, password: admin123), I want to click on the 'Leave' menu tab and verify that the Leave List page loads successfully."
+    },
+    {
+        "id": "TC-OHRM-LEV-002",
+        "module": "OrangeHRM - Leave - Apply Leave Validation",
+        "targetUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "story": "As an employee, after logging in (username: Admin, password: admin123) and navigating to 'Leave' -> 'Apply', I want to click the 'Apply' button without filling out any fields to verify that 'Required' validation error messages appear under the mandatory dropdowns."
+    }
+]

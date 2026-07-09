@@ -4,9 +4,9 @@
   "description": "Multi-Agent AI QA Pipeline using LangGraph and Playwright",
   "main": "index.ts",
   "scripts": {
-    "start:ai": "tsx --env-file=.env index.ts",
-    "clean": "rm -f *.spec.js",
-    "test:ui": "npx playwright test --headed"
+    "generate": "tsx --env-file=.env index.ts --generate",
+    "execute": "tsx --env-file=.env index.ts --execute",
+    "test:ui": "npx playwright test tests/ --headed"
   },
   "dependencies": {
     "@langchain/google-genai": "^0.0.20",

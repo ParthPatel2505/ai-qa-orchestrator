@@ -1,0 +1,7 @@
+[
+    {
+        "module": "Test login",
+        "targetUrl": "https://practicetestautomation.com/",
+        "story": "As an user i want to login to site and all positive nad negative test cases and logout."
+    }
+]

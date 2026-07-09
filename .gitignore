@@ -2,4 +2,4 @@ node_modules/
 .env
 playwright-report/
 test-results/
-orangehrm-ai-test.spec.js
+reports/
